@@ -1,0 +1,128 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    function userTenant() {
+      return isSignedIn() && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        ? get(/databases/$(database)/documents/users/$(request.auth.uid)).data.tenantId
+        : null;
+    }
+    function userRole() {
+      return isSignedIn() && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        ? get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role
+        : null;
+    }
+
+    // Tenants public info
+    match /tenants/{tenantId} {
+      allow read: if true;
+      allow create: if isSignedIn() && request.resource.data.owner == request.auth.uid;
+      allow update, delete: if isSignedIn() && resource.data.owner == request.auth.uid;
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && request.auth.uid == userId;
+      allow update: if isSignedIn() && (request.auth.uid == userId || userRole() in ['owner','admin']);
+      allow delete: if false;
+    }
+
+    // Sales - allow create/read for all authenticated tenant users
+    match /sales/{docId} {
+      allow read: if isSignedIn() && resource.data.tenantId == userTenant();
+      allow create: if isSignedIn() && request.resource.data.tenantId == userTenant();
+      allow update: if isSignedIn() && resource.data.tenantId == userTenant() && userRole() in ['owner','admin','vendedor'];
+      allow delete: if false;
+    }
+
+    // Products - allow CRUD for authenticated tenant users
+    match /products/{docId} {
+      allow read: if isSignedIn() && resource.data.tenantId == userTenant();
+      allow create: if isSignedIn() && request.resource.data.tenantId == userTenant();
+      allow update: if isSignedIn() && resource.data.tenantId == userTenant();
+      allow delete: if isSignedIn() && resource.data.tenantId == userTenant() && userRole() in ['owner','admin'];
+    }
+
+    // Clients - allow CRUD for authenticated tenant users
+    match /clients/{docId} {
+      allow read: if isSignedIn() && resource.data.tenantId == userTenant();
+      allow create: if isSignedIn() && request.resource.data.tenantId == userTenant();
+      allow update: if isSignedIn() && resource.data.tenantId == userTenant();
+      allow delete: if isSignedIn() && resource.data.tenantId == userTenant() && userRole() in ['owner','admin'];
+    }
+
+    // Cash movements - allow read and create for tenant users
+    match /cash_movements/{docId} {
+      allow read: if isSignedIn() && resource.data.tenantId == userTenant();
+      allow create: if isSignedIn() && request.resource.data.tenantId == userTenant();
+      allow update, delete: if false;
+    }
+
+    // Cash sessions - read only for clients (managed by Cloud Functions)
+    match /cash_sessions/{docId} {
+      allow read: if isSignedIn() && resource.data.tenantId == userTenant();
+      allow create, update, delete: if false;
+    }
+
+    // Audit logs - read only for admins
+    match /audit_logs/{docId} {
+      allow read: if isSignedIn() && userRole() in ['owner','admin'];
+      allow create, update, delete: if false;
+    }
+
+    // Stock alerts
+    match /stock_alerts/{docId} {
+      allow read: if isSignedIn() && (resource.data.tenantId == userTenant() || userRole() in ['owner','admin']);
+      allow create: if false;
+      allow update: if isSignedIn() && userRole() in ['owner','admin'];
+      allow delete: if false;
+    }
+
+    // Pending differences
+    match /pending_differences/{docId} {
+      allow read: if isSignedIn() && resource.data.tenantId == userTenant();
+      allow create, update, delete: if false;
+    }
+
+    // Cash session reports
+    match /cash_session_reports/{docId} {
+      allow read: if isSignedIn() && resource.data.tenantId == userTenant();
+      allow create, update, delete: if false;
+    }
+
+    // Providers
+    match /providers/{docId} {
+      allow read: if isSignedIn() && resource.data.tenantId == userTenant();
+      allow create: if isSignedIn() && request.resource.data.tenantId == userTenant();
+      allow update: if isSignedIn() && resource.data.tenantId == userTenant();
+      allow delete: if isSignedIn() && resource.data.tenantId == userTenant() && userRole() in ['owner','admin'];
+    }
+
+    // Purchases
+    match /purchases/{docId} {
+      allow read: if isSignedIn() && resource.data.tenantId == userTenant();
+      allow create: if isSignedIn() && request.resource.data.tenantId == userTenant();
+      allow update: if isSignedIn() && resource.data.tenantId == userTenant();
+      allow delete: if isSignedIn() && resource.data.tenantId == userTenant() && userRole() in ['owner','admin'];
+    }
+
+    // Settings - accessible by tenant admins
+    match /settings/{tenantId} {
+      allow read: if isSignedIn() && tenantId == userTenant();
+      allow create, update: if isSignedIn() && tenantId == userTenant() && userRole() in ['owner','admin'];
+      allow delete: if false;
+    }
+
+    // Stock movements
+    match /stock_movements/{docId} {
+      allow read: if isSignedIn() && resource.data.tenantId == userTenant();
+      allow create: if isSignedIn() && request.resource.data.tenantId == userTenant();
+      allow update, delete: if false;
+    }
+  }
+}
+

@@ -1,0 +1,28 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Función auxiliar para verificar autenticación
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Reglas para logos de negocios
+    match /logos/{tenantId}/{fileName} {
+      // Cualquiera puede ver los logos (para que aparezcan en login, facturas, etc.)
+      allow read: if true;
+      
+      // Solo usuarios autenticados pueden subir logos
+      // Idealmente validaríamos que pertenezcan al tenant, pero Storage no tiene acceso directo a Firestore
+      // Para MVP, validar que esté autenticado y sea una imagen pequeña es suficiente riesgo aceptable
+      allow write: if isSignedIn() 
+                   && request.resource.size < 2 * 1024 * 1024 // Máximo 2MB
+                   && request.resource.contentType.matches('image/.*'); // Solo imágenes
+    }
+
+    // Reglas por defecto para otros archivos (bloqueado por seguridad)
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

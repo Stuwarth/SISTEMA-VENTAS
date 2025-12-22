@@ -1,0 +1,112 @@
+FILE: CAPITULO_I ediit.docx
+  ERROR: file not found
+FILE: CAPITULO_I.docx
+
+SECTION: Intro
+ - CAPÍTULO I
+ - INTRODUCCIÓN
+ - 1. INTRODUCCIÓN
+ - En la actualidad, la gestión eficiente de la información es clave para mejorar los procesos en distintas organizaciones, incluyendo las pequeñas y medianas empresas del sector comercial. La competitividad y sostenibilidad de estos negocios dependen en gran medida de un registro adecuado de datos, un control preciso del inventario y la disponibilidad de información oportuna para la toma de decisiones.
+ - El desarrollo de soluciones tecnológicas especializadas se ha convertido en una herramienta fundamental para optimizar la administración de estos negocios, asegurando un control preciso sobre las ventas, mejorando la transparencia en la gestión de inventarios y facilitando la relación con los clientes.
+ - 1.1 ANTECEDENTES
+ - Se estima que a nivel mundial, más del 60% de las pequeñas y medianas empresas (PYMES) aún utilizan métodos manuales o herramientas básicas como hojas de cálculo para gestionar sus operaciones comerciales. Una cifra preocupante que cada año genera mayores pérdidas económicas por falta de control. Si bien es cierto que en algunas partes del mundo se ha adoptado la transformación digital, aún existe un gran porcentaje que no cuenta con sistemas adecuados para su gestión. (CEPAL, 2023).
+ - Según estudios del sector empresarial, las principales causas de fracaso en PYMES incluyen: falta de control de inventario (18%), desconocimiento de las finanzas del negocio (15%), pérdida de clientes por mala atención (14%), falta de información para tomar decisiones (12%), registros manuales propensos a errores (11%), dificultad para generar reportes (10%), desorganización administrativa (8%), y otros factores (12%). (BID, 2024).
+ - En el contexto boliviano, la situación es particularmente crítica. Según datos de FUNDEMPRESA (2023), existen más de 350.000 empresas registradas en el país, de las cuales más del 90% son micro, pequeñas y medianas empresas. La gran mayoría de estos negocios opera sin sistemas de información integrados, lo que genera problemas de control, pérdida de información y dificultades para competir en el mercado.
+ - En los principales centros comerciales de ciudades como Santa Cruz, Cochabamba, La Paz y otras, muchos comerciantes aún registran sus ventas en cuadernos, controlan su inventario de memoria y desconocen información básica como sus productos más vendidos, sus clientes frecuentes o su margen de ganancia real.
+ - Plataformas como TuGerente.com han surgido en Bolivia para atender esta necesidad, ofreciendo soluciones de gestión de inventarios, ventas, compras y reportes para PYMES de diversos rubros. Este tipo de sistemas demuestra la demanda existente por herramientas tecnológicas que faciliten la gestión comercial.
+ - 1.2 PLANTEAMIENTO DEL PROBLEMA
+ - Actualmente, las pequeñas y medianas empresas del sector comercial operan con registros manuales (cuadernos, hojas sueltas) o herramientas básicas como hojas de cálculo no integradas, lo que genera problemas de organización, pérdida de información y dificultades en la toma de decisiones.
+ - Uno de los problemas más críticos es el control de inventario, ya que no existe un sistema automatizado que facilite el registro de entradas y salidas de productos ni el seguimiento del stock disponible. El propietario o encargado debe revisar manualmente los productos y comunicarse de forma individual con proveedores, lo que puede generar retrasos y confusión en la gestión. Además, no hay un registro estructurado de las ventas realizadas y su detalle, lo que dificulta conocer los productos más vendidos, los clientes frecuentes y la rentabilidad del negocio.
+ - La falta de información organizada impide generar reportes útiles para la toma de decisiones, como conocer las ventas por período, identificar tendencias o planificar compras. Esto coloca a las PYMES en desventaja frente a negocios que sí cuentan con herramientas tecnológicas adecuadas.
+ - 1.2.1 Situación Problemática y/o Requerimiento de la Institución
+ - Las pequeñas y medianas empresas dedicadas al comercio minorista, distribución y servicios manejan sus ventas, registros de productos, registros de clientes y control de inventario en formato físico o en hojas de cálculo dispersas. Con el paso del tiempo y el creciente volumen de operaciones, estos procesos se vuelven deficientes, ya que suelen existir errores al momento de registrar una venta o controlar el stock.
+ - Existen varios factores que ocasionan errores en la gestión comercial. Por ejemplo:
+ - • Al guardar los datos de una venta, a veces se escribe mal el nombre del producto o del cliente, entonces se guarda de manera errónea y al momento de buscar no es el verdadero dato que se debería haber guardado.
+ - • Esta manera de guardar datos crea demora en el proceso de venta y atención al cliente.
+ - • No se tiene certeza del stock disponible, lo que genera ventas de productos que no hay o compras innecesarias.
+ - • Las cuentas por cobrar se pierden o se olvidan por no tener un registro adecuado.
+ - Además, la cantidad de registros va creciendo con el paso del tiempo y ha provocado acumulación de varios cuadernos o archivos dispersos, lo que causa que se pierda mucho tiempo en la búsqueda de información específica. Por otro lado, existe el riesgo de pérdida porque son datos físicos o archivos sin respaldo.
+ - ILUSTRACIÓN Nº 1: Árbol de Problemas
+ - [Insertar diagrama de Árbol de Problemas aquí]
+ - FUENTE: Elaboración propia.
+ - 1.2.2 Objeto de Estudio
+ - El objeto de estudio de este proyecto es la digitalización y optimización de la gestión comercial en pequeñas y medianas empresas, con el fin de mejorar los procesos de control de inventario, registro de ventas, administración de clientes y generación de reportes.
+ - Este estudio abarca tanto los aspectos técnicos (requerimientos, diseño, propuesta del sistema) como los operativos y administrativos de las PYMES, con el objetivo de proponer una herramienta que optimice sus procesos y garantice una mejor gestión del negocio.
+ - 1.2.3 Estudio de Soluciones
+ - ... (149 paragraphs)
+
+============================================================
+
+FILE: CAPITULO_II.docx
+
+SECTION: Intro
+ - CAPITULO II
+ - MARCO TEORICO
+ - 2.1 Marco Teorico
+ - El presente capitulo establece las bases teoricas y conceptuales que sustentan la propuesta de un Sistema de Ventas Integral para PYMES. Se abordan conceptos fundamentales de sistemas de informacion, ingenieria de software, metodologias de desarrollo, bases de datos, paradigmas de programacion, lenguajes y frameworks, seguridad, arquitectura de software y tecnologias en la nube.
+ - 2.2 Sistemas de Informacion
+ - Un sistema de informacion es un conjunto organizado de elementos (personas, datos, actividades, recursos materiales y tecnologicos) que interactuan entre si para procesar datos y generar informacion util para la toma de decisiones en una organizacion (Laudon & Laudon, 2016).
+ - Los sistemas de informacion cumplen funciones esenciales en las organizaciones modernas: entrada de datos, procesamiento, almacenamiento, salida de informacion y retroalimentacion. En el contexto comercial, estos sistemas permiten automatizar procesos de ventas, control de inventarios y gestion de clientes.
+ - 2.3 Ingenieria de Software
+ - La ingenieria de software es la aplicacion de un enfoque sistematico, disciplinado y cuantificable al desarrollo, operacion y mantenimiento de software (IEEE, 2014). Comprende metodos, herramientas y procedimientos para producir software de calidad.
+ - El ciclo de vida del desarrollo de software comprende las fases: analisis de requisitos, diseno, implementacion, pruebas, despliegue y mantenimiento. Segun la norma ISO/IEC 25010, la calidad del software se mide a traves de caracteristicas como funcionalidad, confiabilidad, usabilidad, eficiencia, mantenibilidad y seguridad.
+ - 2.4 Metodologias de Desarrollo de Software
+ - 2.4.1 Modelo en Cascada
+ - El modelo en cascada es una metodologia secuencial donde cada fase debe completarse antes de iniciar la siguiente. Las fases tipicas son: requisitos, diseno, implementacion, pruebas, despliegue y mantenimiento (Pressman, 2014).
+ - Sus ventajas incluyen estructura clara, documentacion completa y adecuacion para proyectos con requisitos bien definidos. Las desventajas son poca flexibilidad ante cambios y deteccion tardia de riesgos.
+ - 2.4.2 Scrum
+ - Scrum es un marco de trabajo agil que organiza el desarrollo en ciclos cortos llamados sprints, generalmente de 2 a 4 semanas (Schwaber & Sutherland, 2020). Se basa en los principios del Manifiesto Agil.
+ - Los roles incluyen: Product Owner (define requisitos), Scrum Master (facilita el proceso) y Equipo de Desarrollo. Los artefactos son Product Backlog, Sprint Backlog e Incremento. Los eventos comprenden Sprint Planning, Daily Scrum, Sprint Review y Sprint Retrospective.
+ - 2.5 Bases de Datos
+ - Una base de datos es una coleccion organizada de datos almacenados y accedidos electronicamente. Un Sistema de Gestion de Bases de Datos (SGBD) es el software que permite crear, administrar y consultar bases de datos (Elmasri & Navathe, 2016).
+ - 2.5.1 Bases de Datos Relacionales
+ - Las bases de datos relacionales organizan los datos en tablas compuestas por filas y columnas. Utilizan SQL para consultas y manipulacion. Sus caracteristicas incluyen integridad referencial, transacciones ACID y normalizacion para evitar redundancia.
+ - 2.5.2 Bases de Datos No Relacionales
+ - Las bases de datos NoSQL son sistemas que no utilizan el modelo relacional tradicional. Incluyen bases documentales (MongoDB), clave-valor (Redis), columnares (Cassandra) y de grafos (Neo4j). Son utiles para datos no estructurados y alta escalabilidad.
+ - 2.5.3 Seleccion del Gestor de Base de Datos
+ - Para seleccionar el sistema de gestion de base de datos mas adecuado, se presenta la siguiente tabla comparativa:
+ - TABLA N 11
+ - COMPARACION DE SISTEMAS DE BASES DE DATOS
+ - FUENTE: Elaboracion propia
+ - Para el sistema propuesto se recomienda MySQL por su licencia gratuita, madurez, excelente rendimiento para aplicaciones web, amplia comunidad y disponibilidad en servicios de hosting.
+ - 2.6 Paradigmas de Programacion
+ - ... (62 paragraphs)
+
+============================================================
+
+FILE: BIBLIOGRAFIA.docx
+
+SECTION: Intro
+ - BIBLIOGRAFIA
+ - BIBLIOGRAFIA
+ - Laudon, K. C., & Laudon, J. P. (2016). Management Information Systems: Managing the Digital Firm. Pearson Education.
+ - Pressman, R. S. (2014). Ingenieria del Software: Un Enfoque Practico. McGraw-Hill Education.
+ - Sommerville, I. (2016). Software Engineering. Pearson Education.
+ - Schwaber, K., & Sutherland, J. (2020). The Scrum Guide. Scrum.org.
+ - Elmasri, R., & Navathe, S. B. (2016). Fundamentals of Database Systems. Pearson Education.
+ - Silberschatz, A., Korth, H. F., & Sudarshan, S. (2019). Database System Concepts. McGraw-Hill Education.
+ - Gonzalez, Abdiel E Caceres. (2004). Programacion Orientada a Objetos. Centro de Investigacion y de Estudios Avanzados.
+ - Rodriguez, L. (2011). Paradigmas de Programacion. Universidad Nacional de La Plata.
+ - Cerrada, J., & Collado, M. (2005). Fundamentos de Programacion. Editorial Universitaria Ramon Areces.
+ - Garcia, Raul. (2019). Estudio de la popularidad del framework VueJS. Universidad Politecnica de Valencia.
+ - Cordova, Fernanda. (2013). Analisis comparativo entre bases de datos relacionales con bases de datos no relacionales. Universidad Tecnica Particular de Loja.
+ - Dominguez, Pablo. (2017). En que consiste el modelo en cascada. OpenClassrooms.
+ - Tinoco Gomez, Oscar. (2014). Criterios de seleccion de metodologias de desarrollo de software. Industrial Data.
+ - Zambrano, Alex & Guarda, Teresa (2019). Tecnicas de mitigacion para principales vulnerabilidades de seguridad en aplicaciones web. RISTI.
+ - IEEE. (2014). Guide to the Software Engineering Body of Knowledge (SWEBOK). IEEE Computer Society.
+ - ISO/IEC 25010:2011. Systems and software engineering - Systems and software Quality Requirements and Evaluation (SQuaRE).
+ - OWASP Foundation. (2021). OWASP Top Ten Web Application Security Risks.
+ - WEBLIOGRAFIA
+ - Laravel - The PHP Framework For Web Artisans. https://laravel.com/docs
+ - Vue.js - The Progressive JavaScript Framework. https://vuejs.org/guide
+ - Bootstrap - The most popular HTML, CSS, and JS library. https://getbootstrap.com/docs
+ - Tailwind CSS - A utility-first CSS framework. https://tailwindcss.com/docs
+ - MySQL Documentation. https://dev.mysql.com/doc/
+ - Node.js Documentation. https://nodejs.org/docs
+ - MDN Web Docs - JavaScript Guide. https://developer.mozilla.org/es/docs/Web/JavaScript/Guide
+ - React Documentation. https://react.dev/learn
+ - TuGerente - Software de Gestion para PYMES Bolivia. https://tugerente.com
+ - OWASP - Open Web Application Security Project. https://owasp.org
+ - ... (32 paragraphs)
+
+============================================================

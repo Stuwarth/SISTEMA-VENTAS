@@ -1,0 +1,52 @@
+[INSTRUCCIONES PARA FORMATO WORD]
+
+- Tamaño de página: Carta (Letter)
+- Márgenes: Superior 2.5cm, Inferior 2.5cm, Izquierdo 3.5cm, Derecho 2.5cm
+- Fuente principal: Arial, 12pt, interlineado 1.5
+- Títulos de capítulo: Arial Black o Arial Negrita, 36pt, centrado
+- Subtítulos (1.1, 1.2, etc.): Arial Negrita, 12pt, alineación izquierda
+- Tablas: Arial 11-12pt, encabezados en negrita
+
+[NOTA: El contenido debe ser copiado en Word y aplicar los estilos mencionados.]
+
+[INICIO DEL DOCUMENTO]
+
+[Portada]
+
+INGENIERÍA DE SISTEMAS
+
+DISEÑO E IMPLEMENTACIÓN DE UN SISTEMA INTEGRAL DE VENTAS BASADO EN TECNOLOGÍAS WEB PARA PYMES
+
+Cochabamba - Bolivia
+2025
+
+[ÍNDICE DE CONTENIDO]
+[ÍNDICE DE TABLAS]
+[ÍNDICE DE ILUSTRACIONES]
+
+[CAPÍTULO I]
+INTRODUCCIÓN
+
+1. INTRODUCCIÓN
+
+En la actualidad, la gestión eficiente de la información es clave para mejorar los procesos en distintas organizaciones, incluyendo las pequeñas y medianas empresas del sector comercial. La competitividad y sostenibilidad de estos negocios dependen en gran medida de un registro adecuado de datos, un control preciso del inventario y la disponibilidad de información oportuna para la toma de decisiones.
+
+El desarrollo de soluciones tecnológicas especializadas se ha convertido en una herramienta fundamental para optimizar la administración de estos negocios, asegurando un control preciso sobre las ventas, mejorando la transparencia en la gestión de inventarios y facilitando la relación con los clientes.
+
+1.1 ANTECEDENTES
+
+Se estima que, a nivel mundial, más del 60% de las pequeñas y medianas empresas (PYMES) aún utilizan métodos manuales o herramientas básicas como hojas de cálculo para gestionar sus operaciones comerciales. Una cifra preocupante que cada año genera mayores pérdidas económicas por falta de control. Si bien es cierto que en algunas partes del mundo se ha adoptado la transformación digital, aún existe un gran porcentaje que no cuenta con sistemas adecuados para su gestión. (CEPAL, 2023).
+
+Según estudios del sector empresarial, las principales causas de fracaso en PYMES incluyen: falta de control de inventario (18%), desconocimiento de las finanzas del negocio (15%), pérdida de clientes por mala atención (14%), falta de información para tomar decisiones (12%), registros manuales propensos a errores (11%), dificultad para generar reportes (10%), desorganización administrativa (8%), y otros factores (12%). (BID, 2024).
+
+En el contexto boliviano, la situación es particularmente crítica. Según datos de  (2023), existen más de 350.000 empresas registradas en el país, de las cuales más del 90% son micro, pequeñas y medianas empresas. La gran mayoría de estos negocios opera sin sistemas de información integrados, lo que genera problemas de control, pérdida de información y dificultades para competir en el mercado.
+
+En los principales centros comerciales de ciudades como Santa Cruz, Cochabamba, La Paz y otras, muchos comerciantes aún registran sus ventas en cuadernos, controlan su inventario de memoria y desconocen información básica como sus productos más vendidos, sus clientes frecuentes o su margen de ganancia real.
+
+Plataformas como TuGerente.com han surgido en Bolivia para atender esta necesidad, ofreciendo soluciones de gestión de inventarios, ventas, compras y reportes para PYMES de diversos rubros. Este tipo de sistemas demuestra la demanda existente por herramientas tecnológicas que faciliten la gestión comercial.
+
+[...CONTINUAR CON EL RESTO DEL CONTENIDO DEL MD, RESPETANDO LA ESTRUCTURA Y APLICANDO LOS ESTILOS INDICADOS...]
+
+[NOTA: Para tablas, usar Arial 11-12pt, encabezados en negrita. Para subtítulos, Arial Negrita 12pt. Para títulos de capítulo, Arial Black 36pt centrado.]
+
+[FIN DEL DOCUMENTO]

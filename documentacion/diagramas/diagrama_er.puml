@@ -1,0 +1,211 @@
+@startuml Diagrama_ER_Sistema_Ventas
+
+title Diagrama Entidad-Relación - Sistema de Ventas Integral
+
+skinparam linetype ortho
+skinparam entity {
+    BackgroundColor #FEFECE
+    BorderColor #A80036
+}
+
+' === ENTIDADES ===
+
+entity "Usuario" as usuario {
+    * id : INT <<PK>>
+    --
+    * nombre : VARCHAR(100)
+    * email : VARCHAR(100) <<UNIQUE>>
+    * password_hash : VARCHAR(255)
+    * rol : ENUM('admin','vendedor')
+    * activo : BOOLEAN
+    * created_at : DATETIME
+    * updated_at : DATETIME
+}
+
+entity "Categoria" as categoria {
+    * id : INT <<PK>>
+    --
+    * nombre : VARCHAR(100)
+    descripcion : TEXT
+    * activo : BOOLEAN
+}
+
+entity "Producto" as producto {
+    * id : INT <<PK>>
+    --
+    * codigo : VARCHAR(50) <<UNIQUE>>
+    * nombre : VARCHAR(200)
+    descripcion : TEXT
+    * categoria_id : INT <<FK>>
+    * precio_venta : DECIMAL(10,2)
+    precio_compra : DECIMAL(10,2)
+    * stock_actual : INT
+    stock_minimo : INT
+    stock_maximo : INT
+    unidad_medida : VARCHAR(20)
+    * activo : BOOLEAN
+    * created_at : DATETIME
+    * updated_at : DATETIME
+}
+
+entity "Cliente" as cliente {
+    * id : INT <<PK>>
+    --
+    * nombre : VARCHAR(200)
+    nit_ci : VARCHAR(20)
+    telefono : VARCHAR(20)
+    email : VARCHAR(100)
+    direccion : TEXT
+    notas : TEXT
+    * created_at : DATETIME
+    * updated_at : DATETIME
+}
+
+entity "Proveedor" as proveedor {
+    * id : INT <<PK>>
+    --
+    * nombre : VARCHAR(200)
+    nit : VARCHAR(20)
+    telefono : VARCHAR(20)
+    email : VARCHAR(100)
+    direccion : TEXT
+    contacto : VARCHAR(100)
+    notas : TEXT
+    * activo : BOOLEAN
+    * created_at : DATETIME
+}
+
+entity "Venta" as venta {
+    * id : INT <<PK>>
+    --
+    * numero : VARCHAR(20) <<UNIQUE>>
+    * fecha : DATETIME
+    cliente_id : INT <<FK>>
+    * usuario_id : INT <<FK>>
+    * subtotal : DECIMAL(12,2)
+    descuento : DECIMAL(12,2)
+    impuesto : DECIMAL(12,2)
+    * total : DECIMAL(12,2)
+    * metodo_pago : ENUM('efectivo','tarjeta','transferencia','credito')
+    * estado : ENUM('completada','anulada','pendiente')
+    notas : TEXT
+    * created_at : DATETIME
+}
+
+entity "DetalleVenta" as detalle_venta {
+    * id : INT <<PK>>
+    --
+    * venta_id : INT <<FK>>
+    * producto_id : INT <<FK>>
+    * cantidad : INT
+    * precio_unitario : DECIMAL(10,2)
+    descuento : DECIMAL(10,2)
+    * subtotal : DECIMAL(12,2)
+}
+
+entity "Compra" as compra {
+    * id : INT <<PK>>
+    --
+    * numero : VARCHAR(20) <<UNIQUE>>
+    * fecha : DATETIME
+    * proveedor_id : INT <<FK>>
+    * usuario_id : INT <<FK>>
+    * total : DECIMAL(12,2)
+    notas : TEXT
+    * created_at : DATETIME
+}
+
+entity "DetalleCompra" as detalle_compra {
+    * id : INT <<PK>>
+    --
+    * compra_id : INT <<FK>>
+    * producto_id : INT <<FK>>
+    * cantidad : INT
+    * costo_unitario : DECIMAL(10,2)
+    * subtotal : DECIMAL(12,2)
+}
+
+entity "MovimientoInventario" as movimiento {
+    * id : INT <<PK>>
+    --
+    * producto_id : INT <<FK>>
+    * tipo : ENUM('entrada','salida','ajuste')
+    * cantidad : INT
+    * motivo : VARCHAR(200)
+    referencia_tipo : VARCHAR(50)
+    referencia_id : INT
+    * usuario_id : INT <<FK>>
+    * created_at : DATETIME
+}
+
+entity "CuentaPorCobrar" as cuenta_cobrar {
+    * id : INT <<PK>>
+    --
+    * cliente_id : INT <<FK>>
+    * venta_id : INT <<FK>>
+    * monto_total : DECIMAL(12,2)
+    * monto_pagado : DECIMAL(12,2)
+    * monto_pendiente : DECIMAL(12,2)
+    * fecha_vencimiento : DATE
+    * estado : ENUM('pendiente','parcial','pagada','vencida')
+    * created_at : DATETIME
+    * updated_at : DATETIME
+}
+
+entity "PagoCuenta" as pago_cuenta {
+    * id : INT <<PK>>
+    --
+    * cuenta_id : INT <<FK>>
+    * monto : DECIMAL(12,2)
+    * fecha_pago : DATETIME
+    metodo_pago : VARCHAR(50)
+    * usuario_id : INT <<FK>>
+    notas : TEXT
+}
+
+entity "Configuracion" as configuracion {
+    * id : INT <<PK>>
+    --
+    * clave : VARCHAR(100) <<UNIQUE>>
+    * valor : TEXT
+    descripcion : VARCHAR(200)
+}
+
+entity "RegistroActividad" as actividad {
+    * id : INT <<PK>>
+    --
+    * usuario_id : INT <<FK>>
+    * accion : VARCHAR(100)
+    * entidad : VARCHAR(50)
+    entidad_id : INT
+    detalles : JSON
+    * ip : VARCHAR(45)
+    * created_at : DATETIME
+}
+
+' === RELACIONES ===
+
+categoria ||--o{ producto : "tiene"
+producto }o--|| categoria : "pertenece a"
+
+usuario ||--o{ venta : "realiza"
+cliente ||--o{ venta : "realiza"
+venta ||--|{ detalle_venta : "contiene"
+producto ||--o{ detalle_venta : "incluido en"
+
+usuario ||--o{ compra : "registra"
+proveedor ||--o{ compra : "provee"
+compra ||--|{ detalle_compra : "contiene"
+producto ||--o{ detalle_compra : "incluido en"
+
+producto ||--o{ movimiento : "tiene"
+usuario ||--o{ movimiento : "registra"
+
+cliente ||--o{ cuenta_cobrar : "debe"
+venta ||--o| cuenta_cobrar : "genera"
+cuenta_cobrar ||--o{ pago_cuenta : "recibe"
+usuario ||--o{ pago_cuenta : "registra"
+
+usuario ||--o{ actividad : "genera"
+
+@enduml

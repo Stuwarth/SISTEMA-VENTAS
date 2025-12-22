@@ -1,0 +1,11 @@
+{
+  "name": "sistema-ventas-emulator-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "seed": "node seed-emulator.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^11.10.0"
+  }
+}

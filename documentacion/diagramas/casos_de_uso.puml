@@ -1,0 +1,142 @@
+@startuml Casos_de_Uso_Sistema_Ventas
+
+title Diagrama de Casos de Uso - Sistema de Ventas Integral
+
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+
+' === ACTORES ===
+actor "Administrador" as Admin #LightBlue
+actor "Vendedor" as Vendedor #LightGreen
+actor "Sistema" as Sistema #LightGray
+
+' === CASOS DE USO POR MÓDULO ===
+
+rectangle "Sistema de Ventas Integral" {
+    
+    package "Módulo de Autenticación" #FFF8DC {
+        usecase "Iniciar Sesión" as UC01
+        usecase "Cerrar Sesión" as UC02
+        usecase "Recuperar Contraseña" as UC03
+    }
+    
+    package "Módulo de Productos e Inventario" #E6F3FF {
+        usecase "Gestionar Productos" as UC04
+        usecase "Crear Producto" as UC04a
+        usecase "Editar Producto" as UC04b
+        usecase "Eliminar Producto" as UC04c
+        usecase "Consultar Productos" as UC04d
+        usecase "Gestionar Categorías" as UC05
+        usecase "Consultar Stock" as UC06
+        usecase "Ajustar Inventario" as UC07
+        usecase "Ver Historial Movimientos" as UC08
+    }
+    
+    package "Módulo de Ventas" #E6FFE6 {
+        usecase "Registrar Venta (POS)" as UC09
+        usecase "Buscar Producto" as UC10
+        usecase "Aplicar Descuento" as UC11
+        usecase "Seleccionar Cliente" as UC12
+        usecase "Procesar Pago" as UC13
+        usecase "Generar Comprobante" as UC14
+        usecase "Anular Venta" as UC15
+        usecase "Consultar Ventas" as UC16
+    }
+    
+    package "Módulo de Clientes" #FFF0F5 {
+        usecase "Gestionar Clientes" as UC17
+        usecase "Crear Cliente" as UC17a
+        usecase "Editar Cliente" as UC17b
+        usecase "Consultar Cliente" as UC17c
+        usecase "Ver Historial Compras" as UC18
+        usecase "Gestionar Cuentas por Cobrar" as UC19
+    }
+    
+    package "Módulo de Compras" #FFFACD {
+        usecase "Gestionar Proveedores" as UC20
+        usecase "Registrar Compra" as UC21
+        usecase "Consultar Compras" as UC22
+    }
+    
+    package "Módulo de Usuarios" #E6E6FA {
+        usecase "Gestionar Usuarios" as UC23
+        usecase "Asignar Roles" as UC24
+        usecase "Ver Registro Actividad" as UC25
+    }
+    
+    package "Módulo de Reportes" #FFE4E1 {
+        usecase "Generar Reporte Ventas" as UC26
+        usecase "Generar Reporte Inventario" as UC27
+        usecase "Ver Dashboard" as UC28
+        usecase "Exportar Reporte" as UC29
+    }
+    
+    package "Módulo de Configuración" #F0FFF0 {
+        usecase "Configurar Datos Negocio" as UC30
+        usecase "Configurar Impuestos" as UC31
+    }
+}
+
+' === RELACIONES ADMINISTRADOR ===
+Admin --> UC01
+Admin --> UC02
+Admin --> UC04
+Admin --> UC05
+Admin --> UC06
+Admin --> UC07
+Admin --> UC08
+Admin --> UC09
+Admin --> UC15
+Admin --> UC16
+Admin --> UC17
+Admin --> UC19
+Admin --> UC20
+Admin --> UC21
+Admin --> UC22
+Admin --> UC23
+Admin --> UC24
+Admin --> UC25
+Admin --> UC26
+Admin --> UC27
+Admin --> UC28
+Admin --> UC29
+Admin --> UC30
+Admin --> UC31
+
+' === RELACIONES VENDEDOR ===
+Vendedor --> UC01
+Vendedor --> UC02
+Vendedor --> UC04d
+Vendedor --> UC06
+Vendedor --> UC09
+Vendedor --> UC16
+Vendedor --> UC17a
+Vendedor --> UC17c
+Vendedor --> UC18
+Vendedor --> UC28
+
+' === RELACIONES SISTEMA ===
+Sistema --> UC03
+Sistema --> UC14
+
+' === EXTENSIONES E INCLUSIONES ===
+UC04 ..> UC04a : <<include>>
+UC04 ..> UC04b : <<include>>
+UC04 ..> UC04c : <<include>>
+UC04 ..> UC04d : <<include>>
+
+UC09 ..> UC10 : <<include>>
+UC09 ..> UC13 : <<include>>
+UC09 ..> UC14 : <<include>>
+UC09 ..> UC11 : <<extend>>
+UC09 ..> UC12 : <<extend>>
+
+UC17 ..> UC17a : <<include>>
+UC17 ..> UC17b : <<include>>
+UC17 ..> UC17c : <<include>>
+
+UC26 ..> UC29 : <<extend>>
+UC27 ..> UC29 : <<extend>>
+
+@enduml

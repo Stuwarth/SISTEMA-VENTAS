@@ -67,3 +67,14 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
+
+# Project specific ignores
+documentacion/
+.venv/
+.env*
+*.local
+serviceAccountKey.json
+*.key
+*.pem
+dist/
+build/
